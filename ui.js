@@ -458,7 +458,7 @@ UI.init = function(){
         text(TITLE,0,0);
         textSize(18);
         textStyle(ITALIC);
-        text("Simulate your own monster storms!",0,40);
+        text("Simulate some monster storms... or chill, I guess.",0,40);
     });
 
     mainMenu.append(false,WIDTH/2-100,HEIGHT/2-20,200,40,function(s){    // "New Basin" button
