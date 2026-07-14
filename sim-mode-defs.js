@@ -285,7 +285,11 @@ SPAWN_RULES[SIM_MODE_SPOOKY].doSpawn = SPAWN_RULES.defaults.doSpawn;
 
 // -- Extremely Hyper Mode -- //
 
-SPAWN_RULES[SIM_MODE_EXTREME].doSpawn = SPAWN_RULES.defaults.doSpawn;
+SPAWN_RULES[SIM_MODE_EXTREME].doSpawn = function(b){
+    if(random()<(0.011*sq((seasonCurve(b.tick)+1)/2)+0.004)) b.spawnArchetype('tw');
+
+    if(random()<0.02-0.01*seasonCurve(b.tick)) b.spawnArchetype('ex');
+};
 
 
 // ---- Definitions of Environmental Fields ---- //
