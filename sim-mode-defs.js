@@ -1,12 +1,13 @@
 // ---- Simulation Modes ---- //
 
-const SIMULATION_MODES = ['Normal','Hyper','Wild','Megablobs','Experimental','Spooky']; // Labels for sim mode selector UI
+const SIMULATION_MODES = ['Normal','Hyper','Wild','Megablobs','Experimental','Spooky','Extremely Hyper']; // Labels for sim mode selector UI
 const SIM_MODE_NORMAL = 0;
 const SIM_MODE_HYPER = 1;
 const SIM_MODE_WILD = 2;
 const SIM_MODE_MEGABLOBS = 3;
 const SIM_MODE_EXPERIMENTAL = 4;
 const SIM_MODE_SPOOKY = 5;
+const SIM_MODE_EXTREME = 6;
 
 // ---- Active Attributes ---- //
 
@@ -49,6 +50,7 @@ SPAWN_RULES[SIM_MODE_WILD] = {};
 SPAWN_RULES[SIM_MODE_MEGABLOBS] = {};
 SPAWN_RULES[SIM_MODE_EXPERIMENTAL] = {};
 SPAWN_RULES[SIM_MODE_SPOOKY] = {};
+SPAWN_RULES[SIM_MODE_EXTREME] = {};
 
 // -- Defaults -- //
 
@@ -281,6 +283,10 @@ SPAWN_RULES[SIM_MODE_EXPERIMENTAL].doSpawn = SPAWN_RULES[SIM_MODE_HYPER].doSpawn
 
 SPAWN_RULES[SIM_MODE_SPOOKY].doSpawn = SPAWN_RULES.defaults.doSpawn;
 
+// -- Extremely Hyper Mode -- //
+
+SPAWN_RULES[SIM_MODE_EXTREME].doSpawn = SPAWN_RULES.defaults.doSpawn;
+
 
 // ---- Definitions of Environmental Fields ---- //
 
@@ -293,6 +299,7 @@ ENV_DEFS[SIM_MODE_WILD] = {};  // "Wild" simulation mode
 ENV_DEFS[SIM_MODE_MEGABLOBS] = {}; // "Megablobs" simulation mode
 ENV_DEFS[SIM_MODE_EXPERIMENTAL] = {}; // "Experimental" simulation mode
 ENV_DEFS[SIM_MODE_SPOOKY] = {}; // "Spooky" simulation mode
+ENV_DEFS[SIM_MODE_EXTREME] = {}; // "Extremely Hyper" simulation mode
 
 // -- Sample Env Field -- //
 
@@ -379,6 +386,14 @@ ENV_DEFS[SIM_MODE_MEGABLOBS].jetstream = {
 };
 ENV_DEFS[SIM_MODE_EXPERIMENTAL].jetstream = {};
 ENV_DEFS[SIM_MODE_SPOOKY].jetstream = {};
+ENV_DEFS[SIM_MODE_EXTREME].jetstream = {
+    modifiers: {
+        peakLat: 0.15,
+        antiPeakLat: 0.39,
+        peakRange: 0.15,
+        antiPeakRange: 0.4
+    }
+};
 
 // -- LLSteering -- //
 
@@ -465,6 +480,7 @@ ENV_DEFS[SIM_MODE_WILD].LLSteering = {
 ENV_DEFS[SIM_MODE_MEGABLOBS].LLSteering = {};
 ENV_DEFS[SIM_MODE_EXPERIMENTAL].LLSteering = {};
 ENV_DEFS[SIM_MODE_SPOOKY].LLSteering = {};
+ENV_DEFS[SIM_MODE_EXTREME].LLSteering = {};
 
 // -- ULSteering -- //
 
@@ -590,6 +606,7 @@ ENV_DEFS[SIM_MODE_WILD].ULSteering = {
 ENV_DEFS[SIM_MODE_MEGABLOBS].ULSteering = {};
 ENV_DEFS[SIM_MODE_EXPERIMENTAL].ULSteering = {};
 ENV_DEFS[SIM_MODE_SPOOKY].ULSteering = {};
+ENV_DEFS[SIM_MODE_EXTREME].ULSteering = {};
 
 // -- shear -- //
 
@@ -632,6 +649,7 @@ ENV_DEFS[SIM_MODE_WILD].shear = {};
 ENV_DEFS[SIM_MODE_MEGABLOBS].shear = {};
 ENV_DEFS[SIM_MODE_EXPERIMENTAL].shear = {};
 ENV_DEFS[SIM_MODE_SPOOKY].shear = {};
+ENV_DEFS[SIM_MODE_EXTREME].shear = {};
 
 // -- SSTAnomaly -- //
 
@@ -696,6 +714,13 @@ ENV_DEFS[SIM_MODE_MEGABLOBS].SSTAnomaly = {
 };
 ENV_DEFS[SIM_MODE_EXPERIMENTAL].SSTAnomaly = {};
 ENV_DEFS[SIM_MODE_SPOOKY].SSTAnomaly = {};
+ENV_DEFS[SIM_MODE_EXTREME].SSTAnomaly = {
+    modifiers: {
+        r: 6,
+        bigBlobBase: 1.5,
+        bigBlobExponentThreshold: 1.2
+    }
+};
 
 // -- SST -- //
 
@@ -784,6 +809,14 @@ ENV_DEFS[SIM_MODE_EXPERIMENTAL].SST = {
     }
 };
 ENV_DEFS[SIM_MODE_SPOOKY].SST = {};
+ENV_DEFS[SIM_MODE_EXTREME].SST = {
+    modifiers: {
+        offSeasonPolarTemp: 10,
+        peakSeasonPolarTemp: 38,
+        offSeasonTropicsTemp: 44,
+        peakSeasonTropicsTemp: 80
+    }
+};
 
 // -- moisture -- //
 
@@ -849,6 +882,13 @@ ENV_DEFS[SIM_MODE_WILD].moisture = {
 ENV_DEFS[SIM_MODE_MEGABLOBS].moisture = {};
 ENV_DEFS[SIM_MODE_EXPERIMENTAL].moisture = {};
 ENV_DEFS[SIM_MODE_SPOOKY].moisture = {};
+ENV_DEFS[SIM_MODE_EXTREME].moisture = {
+    modifiers: {
+        polarMoisture: 0.72,
+        tropicalMoisture: 0.78,
+        mountainMoisture: 0.34
+    }
+};
 
 // ---- Active Storm System Algorithm ---- //
 
@@ -861,6 +901,7 @@ STORM_ALGORITHM[SIM_MODE_WILD] = {};
 STORM_ALGORITHM[SIM_MODE_MEGABLOBS] = {};
 STORM_ALGORITHM[SIM_MODE_EXPERIMENTAL] = {};
 STORM_ALGORITHM[SIM_MODE_SPOOKY] = {};
+STORM_ALGORITHM[SIM_MODE_EXTREME] = {};
 
 // -- Interaction -- //
 
@@ -1074,6 +1115,7 @@ STORM_ALGORITHM[SIM_MODE_WILD].version = 0;
 STORM_ALGORITHM[SIM_MODE_MEGABLOBS].version = 0;
 STORM_ALGORITHM[SIM_MODE_EXPERIMENTAL].version = 1;
 STORM_ALGORITHM[SIM_MODE_SPOOKY].version = 0;
+STORM_ALGORITHM[SIM_MODE_EXTREME].version = 0;
 
 // -- Upgrade -- //
 // Converts active attributes in case an active system is loaded after an algorithm change breaks old values
@@ -1105,5 +1147,9 @@ STORM_ALGORITHM[SIM_MODE_EXPERIMENTAL].upgrade = function(sys,data,oldVersion){
 };
 
 // STORM_ALGORITHM[SIM_MODE_SPOOKY].upgrade = function(sys,data,oldVersion){
+
+// };
+
+// STORM_ALGORITHM[SIM_MODE_EXTREME].upgrade = function(sys,data,oldVersion){
 
 // };
