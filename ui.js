@@ -890,7 +890,7 @@ UI.init = function(){
         simSettings.setColorScheme("incmod", COLOR_SCHEMES.length);
         refreshTracks(true);
     }).append(false,0,37,300,30,function(s){     // speed unit
-        let b = simSettings.smoothLandColor ? "Enabled" : "Disabled";
+        let b = simSettings.showDebugProps ? "Enabled" : "Disabled";
         s.button("Debug Property Appearance: " + b, true);
     },function(){
         simSettings.setShowDebugProps("toggle");
