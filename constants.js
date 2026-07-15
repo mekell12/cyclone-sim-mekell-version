@@ -1,5 +1,5 @@
 const TITLE = "Cyclone Simulator (Mekell Version)";
-const VERSION_NUMBER = "F.0.1.2";
+const VERSION_NUMBER = "F.0.1.3";
 
 const SAVE_FORMAT = 7;  // Format #7 in use starting in v0.4
 const EARLIEST_COMPATIBLE_FORMAT = 0;
