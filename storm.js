@@ -268,7 +268,7 @@ class Storm{
             stormIcons.fill(0);
             if(simSettings.showStrength){
                 stormIcons.textSize(10);
-                stormIcons.text(simSettings.showDebugProps ? `${displayWindspeed(floor(st), 1)} / ${floor(pr)} hPa\n${round(lwc*1000)/1000} LWC / ${round(uwc*1000)/1000} UWC` : `${displayWindspeed(floor(st), 1)}\n${floor(pr)} hPa`, 0, DIAMETER + 5);
+                stormIcons.text(simSettings.showDebugProps ? `${displayWindspeed(floor(st), 1)} / ${floor(pr)} hPa\n${round(lwc*1000)/1000} LWC / ${round(uwc*1000)/1000} UWC / ${round(organization*1000)/1000} O` : `${displayWindspeed(floor(st), 1)}\n${floor(pr)} hPa`, 0, DIAMETER + 5);
             }
             if(name){
                 stormIcons.textAlign(LEFT,CENTER);
