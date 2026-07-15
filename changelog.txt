@@ -1,5 +1,7 @@
 About: A p5.js tropical cyclone simulation game
 
+vF.0.1.2 (2026-07-14):
+   + Added "Debug Properties" setting, which currently allows for vital insight into conditions for subtropical cyclones
 vF.0.1.1 (2026-07-14):
    % Changed title and subtitle
 vF.0.1.0 (2026-07-14):
