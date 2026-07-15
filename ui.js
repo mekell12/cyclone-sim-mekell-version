@@ -893,7 +893,7 @@ UI.init = function(){
         let b = simSettings.smoothLandColor ? "Enabled" : "Disabled";
         s.button("Debug Property Appearance: " + b, true);
     },function(){
-        simSettings.showDebugProps("toggle");
+        simSettings.setShowDebugProps("toggle");
     });
 
     settingsMenu.append(false,WIDTH/2-150,7*HEIGHT/8-20,300,30,function(s){ // "Back" button
