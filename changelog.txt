@@ -1,5 +1,8 @@
 About: A p5.js tropical cyclone simulation game
 
+vF.0.1.3 (2026-07-15):
+   % Main settings menu buttons made more compact to fit debug properties setting button
+   + Organization variable visible in debug properties
 vF.0.1.2 (2026-07-14):
    + Added "Debug Properties" setting, which currently allows for vital insight into conditions for subtropical cyclones
 vF.0.1.1 (2026-07-14):
