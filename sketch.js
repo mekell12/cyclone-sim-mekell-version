@@ -237,11 +237,11 @@ class Settings{
     }
 
     static order(){
-        return ["colorScheme","speedUnit","smoothLandColor","showMagGlass","snowLayers","useShadows","trackMode","showStrength","doAutosave"];    // add new settings to the beginning of this array
+        return ["showDebugProps","colorScheme","speedUnit","smoothLandColor","showMagGlass","snowLayers","useShadows","trackMode","showStrength","doAutosave"];    // add new settings to the beginning of this array
     }
 
     static defaults(){
-        return [0,0,true,false,2,false,0,false,true];  // add new defaults to the beginning of this array
+        return [false,0,0,true,false,2,false,0,false,true];  // add new defaults to the beginning of this array
     }
 
     save(){
