@@ -411,10 +411,10 @@ ENV_DEFS[SIM_MODE_EXTREME].jetstream = {
 };
 ENV_DEFS[SIM_MODE_YEARROUND].jetstream = {
     modifiers: {
-        peakLat: 0.45,
-        antiPeakLat: 0.45,
-        peakRange: 0.425,
-        antiPeakRange: 0.425
+        peakLat: 0.25,
+        antiPeakLat: 0.25,
+        peakRange: 0.4,
+        antiPeakRange: 0.4
     }
 };
 
