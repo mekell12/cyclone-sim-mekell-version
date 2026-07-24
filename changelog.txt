@@ -1,5 +1,10 @@
 About: A p5.js tropical cyclone simulation game
 
+vF.0.1.4 (2026-07-24):
+   % Changed a UL Steering parameter in "Extremely Hyper" simulation mode
+   + Added "Year-Round" simulation mode
+      > Activity is like normal mode all year
+      > Finally, March C5s are plausible
 vF.0.1.3 (2026-07-15):
    % Main settings menu buttons made more compact to fit debug properties setting button
    + Organization variable visible in debug properties
