@@ -296,9 +296,9 @@ SPAWN_RULES[SIM_MODE_EXTREME].doSpawn = function(b){
 // -- Year-Round Mode -- //
 
 SPAWN_RULES[SIM_MODE_YEARROUND].doSpawn = function(b){
-    if(random()<0.015) b.spawnArchetype('tw');
+    if(random()<0.0075) b.spawnArchetype('tw');
 
-    if(random()<0.01) b.spawnArchetype('ex');
+    if(random()<0.005) b.spawnArchetype('ex');
 };
 
 
